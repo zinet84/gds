@@ -3,3 +3,4 @@ pytesseract
 discord.py
 requests
 Pillow
+google-cloud-vision
