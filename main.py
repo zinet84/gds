@@ -36,8 +36,7 @@ async def 수로(ctx):
     result = pt.image_to_string(image,lang='kor+eng')
 
     print("="*30)
-    print()
-    #print(pt.image_to_boxes(image,lang='kor+eng'))
+    print(result)
     print("="*30)
     await ctx.send(result)
 
