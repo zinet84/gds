@@ -31,7 +31,7 @@ async def 수로(ctx):
 
     image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
 
-    cv2.imwrite("/mnt/c/Users/simdh/Documents/test.jpg", image)
+    #cv2.imwrite("/mnt/c/Users/simdh/Documents/test.jpg", image)
 
     result = pt.image_to_string(image,lang='kor+eng')
 
