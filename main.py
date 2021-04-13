@@ -6,6 +6,7 @@ from discord import message, Attachment
 from discord.ext import commands
 import numpy as np
 import requests
+import google_text_detection as gtd
 
 TOKEN=os.environ["BOT_TOKEN"]
 
@@ -34,10 +35,12 @@ async def 수로(ctx):
     #cv2.imwrite("/mnt/c/Users/simdh/Documents/test.jpg", image)
 
     result = pt.image_to_string(image,lang='kor+eng')
+    ret = gtd.detect_text(image)
 
     print("="*30)
-    print(image.shape)
     print(result)
+    print("\/\/"*10)
+    print(ret)
     print("="*30)
     await ctx.send(result)
 
