@@ -19,7 +19,6 @@ async def on_ready():
 
 @app.command()
 async def 수로(ctx):
-    print("[[[called!!!!!!!!!!!!!!!!!!!!]]]")
     url = ctx.message.attachments[0].url
     image_nparray = np.asarray(bytearray(requests.get(url).content), dtype=np.uint8)
     image = cv2.imdecode(image_nparray, cv2.IMREAD_COLOR)
@@ -37,6 +36,7 @@ async def 수로(ctx):
     result = pt.image_to_string(image,lang='kor+eng')
 
     print("="*30)
+    print(image.shape)
     print(result)
     print("="*30)
     await ctx.send(result)
